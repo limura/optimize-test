@@ -15,7 +15,7 @@ void stroke_add(float x, float y, float p)
 	global_data.p += p;
 }
 
-void parent(
+inline void parent(
 	float xp0, float xp1, float xp2, float xp3,
 	float yp0, float yp1, float yp2, float yp3,
 	float pp0, float pp1, float pp2, float pp3
@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 {
 	int loop_count = atoi(argv[1]);
 	int i;
-	global_data.x = global_data.y = global_data.z = 0.0f;
+	global_data.x = global_data.y = global_data.p = 0.0f;
 	float lastX[4] = { 0.1f, 0.2f, 0.3f, 0.4f };
 	float lastY[4] = { 0.1f, 0.2f, 0.3f, 0.4f };
 	float lastP[4] = { 0.1f, 0.2f, 0.3f, 0.4f };
