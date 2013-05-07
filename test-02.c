@@ -62,7 +62,10 @@ int main(int argc, char *argv[])
 {
 	int loop_count = atoi(argv[1]);
 	int i;
-	float lastX[4], lastY[4], lastP[4];
+	global_data.x = global_data.y = global_data.z = 0.0f;
+	float lastX[4] = { 0.1f, 0.2f, 0.3f, 0.4f };
+	float lastY[4] = { 0.1f, 0.2f, 0.3f, 0.4f };
+	float lastP[4] = { 0.1f, 0.2f, 0.3f, 0.4f };
 	for(i = 0; i < loop_count; ++i)
 	{
 		parent(
@@ -71,5 +74,6 @@ int main(int argc, char *argv[])
 			, lastP[0], lastP[1], lastP[2], lastP[3]
 			);
 	}
+	printf("%f,%f,%f\n", global_data.x, global_data.y, global_data.p);
 	return 0;
 }
